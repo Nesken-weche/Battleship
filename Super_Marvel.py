@@ -10,7 +10,6 @@ if x < 10:
 else:
     print('welcome')
 
-#character_name = ['Batman', 'Superman', 'Ironman']
 character_properties = {
     'Batman': {
         'Strength': 100,
@@ -39,19 +38,22 @@ for character in character_properties:
 
 player_choice = input('Enter character name ')
 
+answer = input('Do you think your player will defeat the master? Yes or No :')
+
 def total():
-    x = 0
-    x = x + character_properties[player_choice]['Strength']
-    x = x + character_properties[player_choice]['Weakness']
-    x = x + character_properties[player_choice]['Health']
-    x = x + character_properties[player_choice]['Fatality']
-    x = x / 4
-    return int(x)
+    my_total = 0
+    for property in character_properties[player_choice]:
+        my_total += character_properties[player_choice][property]
 
+    my_total /= 4
+    return int(my_total)
 
-if total() > 70:
-    print(player_choice + ' win!')
-elif total() == 70:
-    print('Try again')
+if answer is "yes":
+    if total() > 70:
+        print(player_choice + ' win!')
+    elif total() == 70:
+        print('Try again')
+    else:
+        print('You Loooooose')
 else:
-    print('You Loooooose')
+    print("Goodbye!")
