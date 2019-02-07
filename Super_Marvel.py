@@ -46,12 +46,12 @@ def total():
     x = x + character_properties[player_choice]['Health']
     x = x + character_properties[player_choice]['Fatality']
     x = x / 4
-    return x
+    return int(x)
 
 
-if total() > 400:
-    print('You win!')
-elif total() == 400:
+if total() > 70:
+    print(player_choice + ' win!')
+elif total() == 70:
     print('Try again')
 else:
     print('You Loooooose')
