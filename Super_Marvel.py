@@ -51,4 +51,7 @@ def total():
 
 if total() > 400:
     print('You win!')
-
+elif total() == 400:
+    print('Try again')
+else:
+    print('You Loooooose')
